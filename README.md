@@ -38,7 +38,7 @@ Para instalarlo es el mismo con reemplazando el run
 ollama pull Nombre del modelo
 ````
 Este es un ejemplo de una descarga completa:
-``bash
+````bash
 pulling manifest 
 pulling 2af3b81862c6... 100% ▕███████████████████████████████████████████████████████████████████████▏ 637 MB                         
 pulling af0ddbdaaa26... 100% ▕███████████████████████████████████████████████████████████████████████▏   70 B                         
@@ -83,10 +83,20 @@ Esta información fue extraida de Ollama en la ventana de Github -> carpeta Docs
  * stream false: Para recibir la respuesta en un solo token
 
 ## 5. Para cargar en Github
-5.1 Para indexar los documentos existentes
+### 5.1 Para indexar los documentos existentes
+Indexa, valida todos los documentos que se tienen:
 ````bash
- git add . Indexa, valida todos los documentos que se tienen
+git add . 
  ````
- git commit -m "UPDATE README.md" para modificar los archivos
+ ### 5.2 Para realizar las modificaciones realizadas
+ Para cargar las modificaciones realizadas se usa el comando:
+ ````bash
+git commit -m "UPDATE README.md" 
+ ````
+ ### 5.3 Para guardar las modificaciones
 
- Para guardar gir push -u origin main Esto va a tomar todos los cambios realizados y guardarlos.
+Para guardar se debe de ejecutar el comando:
+````bash
+git push -u origin main
+````
+Esto va a tomar todos los cambios realizados y guardarlos.
