@@ -125,6 +125,32 @@ curl "https://api.groq.com/openai/v1/chat/completions" \
          "model": "llama3-8b-8192",
          "stream": false
           }'
+````
+# 7. Importar libreria Python
+Se ingresa a [W3SCHOOLS](https://www.w3schools.com/python/module_requests.asp) donde buscaremos las librerias de python.
 
+## 7.1 Busqueda de entorno de trabajo
+Cuando se ingresa a esa pantalla en la parte inferior esta la forma de instalacion de los diferentes entornos que presta python para instalarse en este caso POST
+## 7.2 Instalación de Python
+En nuestro caso que utilizamos post la estructura es esta:
+````bash
+import requests
+import json
 
+url = 'http://localhost:11434/api/generate'
+myobj = {
+  "model": "tinyllama",
+  "prompt": "Why is the sky blue?", 
+  "stream": False
+}
+
+x = requests.post(url, json = myobj)
+x = json.loads(x.text)
+print(x["response"])
+````
+Se agrego la libreria de JSON para poder recibir a pantalla unicamente el response es decir la respuesta a la pregunta solicitada.
+ 
+Para esta prueba en particular se creo en el directorio principal una carpeta de Ejemplos y en la carpeta se creo el archivo py donde se agrego el codigo, luego por terminal se ejecuto con el comando basico de python dentro del directorio donde esta el archivo:
+````bash
+python3 NombredelArchivopy
 ````
