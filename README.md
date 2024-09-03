@@ -100,3 +100,31 @@ Para guardar se debe de ejecutar el comando:
 git push -u origin main
 ````
 Esto va a tomar todos los cambios realizados y guardarlos.
+
+## 6. API Rest con GrogCloud
+
+Se ingresa a la pagina principal de [GroqCloud](https://console.groq.com/playground)
+### 6.1 Crear API KEY
+Una vez se ingresa a GroqCloud al lado derecho en el menu principal existe una ventana llamada API KEYS, es esta ventana debes ingresar y crear un APIKEY con el nombre que se desee y copiar el identificador de la llave en algun sitio que tengamos acceso siempre que se requiera.
+### 6.2 Consulta a Groq mediante API REST
+
+Esta es la estructura de una consulta normal a Groq mediante API REST:
+````bash
+curl "https://api.groq.com/openai/v1/chat/completions" \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer ${GROQ_API_KEY}" \
+  -d '{
+         "messages": [
+           {
+             "role": "user",
+             "content": "¿Por que el cielo es azul?
+"
+           }
+         ],
+         "model": "llama3-8b-8192",
+         "stream": false
+          }'
+
+
+````
